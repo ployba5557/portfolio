@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440, initial-scale=1.0">
+    <title>Pornpailin Phimprao - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Freehand & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- เชื่อมโยงไฟล์ CSS ภายนอก -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. พื้นหลัง Mesh Gradient -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute w-[2674px] h-[2116px] left-[calc(50%-1337px)] top-[calc(50%-1058px)] filter blur-[200px]">
+            <div class="anim-vec1 absolute bg-[rgba(138,183,228,0.7)] transition-all"></div>
+            <div class="anim-vec2 absolute bg-[rgba(35,223,173,0.7)] transition-all"></div>
+            <div class="anim-vec3 absolute bg-[rgba(160,227,164,0.7)] transition-all"></div>
+            <div class="anim-vec4 absolute bg-[rgba(97,145,217,0.7)] transition-all"></div>
+            <div class="anim-vec5 absolute bg-[rgba(205,213,116,0.7)] transition-all"></div>
+        </div>
+    </div>
+
+    <!-- 2. แถบเมนูด้านบน (Rectangle 1 ตามสเปก Figma เป๊ะๆ อยู่เลเยอร์บนสุด z-50) -->
+    <div class="sticky top-[15px] w-[1168px] h-[70px] mx-[136px] p-[10px] z-50 flex justify-center animate-fade-in-down">
+        <div class="w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
+    </div>
+
+    <!-- 3. Frame 6: โครงสร้างหลัก -->
+    <div class="absolute w-[1440px] left-[calc(50%-720px)] top-[134px] flex flex-col items-center gap-[48px] z-20">
+        
+        <!-- Header Text Block -->
+        <div class="flex flex-col items-center gap-[72px]">
+            <div class="flex flex-col items-center gap-[120px]">
+                
+                <!-- ชื่อ Pornpailin Phimprao -->
+                <div class="relative w-[310px] h-[48px] animate-fade-in-up">
+                    <div class="absolute h-[173px] left-[-12px] right-[-28px] top-[-15px] font-freehand font-normal text-[96px] leading-[173px] text-name-color whitespace-nowrap">
+                        Pornpailin
+                    </div>
+                    <div class="absolute h-[87px] left-[159px] right-[-81px] top-[90px] font-freehand font-normal text-[48px] leading-[87px] text-name-color whitespace-nowrap">
+                        Phimprao
+                    </div>
+                </div>
+
+                <!-- PORTFOLIO -->
+                <div class="w-[331px] h-[48px] flex flex-row justify-center items-center gap-[12px] p-0 animate-final-portfolio">
+                    <span class="w-[26px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-p">P</span>
+                    <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o1">O</span>
+                    <span class="w-[27px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-r">R</span>
+                    <span class="w-[27px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-t">T</span>
+                    <span class="w-[24px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-f">F</span>
+                    <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o2">O</span>
+                    <span class="w-[23px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-l">L</span>
+                    <span class="w-[12px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-i">I</span>
+                    <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o3">O</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Frame 12: เรียงตามลำดับ Flex Column -->
+        <div class="flex flex-col items-center gap-[32px]">
+            
+            <!-- 1. รูปโปรไฟล์ -->
+            <div class="w-[147px] h-[195px] bg-[#222] rounded-[40px] overflow-hidden border border-white/20 shadow-xl shrink-0 animate-profile-entrance">
+                <img src="img/profile1.png" onerror="this.src='image_d3d8df.png'" alt="Pornpailin Profile" class="w-full h-full object-cover">
+            </div>
+
+            <!-- 2. ข้อความบรรยาย -->
+            <div class="w-full max-w-[420px] font-inter font-normal text-[16px] leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance">
+                Hi, My name’s Pornpailin Phimprao. <br>
+                I’m a Computer Engineering graduate <br>
+                with a strong passion for UX/UI Design.
+            </div>
+
+            <!-- 3. ปุ่ม See More -->
+            <div onclick="alert('ไปหน้าถัดไป')" class="relative w-[147px] h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate animate-btn-entrance">
+                
+                <!-- Ellipse 2: สี #323232 ขยายขึ้นมาเต็มพื้นที่ปุ่มตอน Hover -->
+                <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0"></div>
+                
+                <!-- ตัวปุ่มหลัก -->
+                <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[20px] py-[10px] gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
+                    <span class="font-inter font-medium text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">See more</span>
+                    
+                    <div class="w-[24px] h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
+                        <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

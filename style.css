@@ -1,0 +1,123 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    width: 1440px;
+    height: 3038px;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.font-freehand {
+    font-family: 'Freehand', cursive;
+}
+
+.text-name-color {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* ── Entrance & Fade Animations ── */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* ── Sequential Letter Reveal Animation ── */
+@keyframes letterFadeIn {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.95; }
+}
+
+.letter-p { animation: letterFadeIn 0.3s ease forwards; animation-delay: 0.2s; opacity: 0.2; }
+.letter-o1 { animation: letterFadeIn 0.3s ease forwards; animation-delay: 0.4s; opacity: 0.2; }
+.letter-r { animation: letterFadeIn 0.3s ease forwards; animation-delay: 0.6s; opacity: 0.2; }
+.letter-t { animation: letterFadeIn 0.3s ease forwards; animation-delay: 0.8s; opacity: 0.2; }
+.letter-f { animation: letterFadeIn 0.3s ease forwards; animation-delay: 1.0s; opacity: 0.2; }
+.letter-o2 { animation: letterFadeIn 0.3s ease forwards; animation-delay: 1.2s; opacity: 0.2; }
+.letter-l { animation: letterFadeIn 0.3s ease forwards; animation-delay: 1.4s; opacity: 0.2; }
+.letter-i { animation: letterFadeIn 0.3s ease forwards; animation-delay: 1.6s; opacity: 0.2; }
+.letter-o3 { animation: letterFadeIn 0.3s ease forwards; animation-delay: 1.8s; opacity: 0.2; }
+
+@keyframes finalLayoutReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-final-portfolio {
+    animation: finalLayoutReveal 0.6s cubic-bezier(0.25, 1, 0.5, 1) 2.1s forwards;
+    opacity: 0;
+}
+
+.animate-profile-entrance {
+    animation: fadeInUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 3.0s forwards;
+    opacity: 0;
+}
+
+.animate-bio-entrance {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 4.5s forwards;
+    opacity: 0;
+}
+
+.animate-btn-entrance {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 5.5s forwards;
+    opacity: 0;
+}
+
+/* ── Group 599 Exact Container Dimensions & Matrix Vector Animations ── */
+@keyframes vec1Animation {
+    0%, 100% { left: 1.95%; right: 63.57%; top: 33.44%; bottom: 18.82%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
+    33% { left: -6.45%; right: 73.35%; top: 34.96%; bottom: 15.45%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
+    66% { left: -8.15%; right: 75.04%; top: 4.16%; bottom: 46.24%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
+}
+
+@keyframes vec2Animation {
+    0%, 100% { left: 0%; right: 69.02%; top: 0%; bottom: 53.04%; transform: matrix(0.6, 0.8, -0.75, 0.66, 0, 0); }
+    33% { left: 4.23%; right: 60.88%; top: -3.22%; bottom: 45.61%; transform: matrix(0.6, 0.8, -0.75, 0.66, 0, 0); }
+    66% { left: 24.13%; right: 46.23%; top: -2.87%; bottom: 53.92%; transform: matrix(0.6, 0.8, -0.75, 0.66, 0, 0); }
+}
+
+@keyframes vec3Animation {
+    0%, 100% { left: 42.88%; right: 18.45%; top: 47.6%; bottom: 14.26%; }
+    33%       { left: 31.21%; right: 25.45%; top: 51.06%; bottom: 6.23%; }
+    66%       { left: 20.63%; right: 40.7%; top: 53.34%; bottom: 8.53%; }
+}
+
+@keyframes vec4Animation {
+    0%, 100% { left: 34.14%; right: 13.92%; top: 7.76%; bottom: 37.89%; }
+    33%       { left: 50.53%; right: -2.46%; top: 17.3%; bottom: 28.35%; }
+    66%       { left: 41.16%; right: -2.59%; top: 18.74%; bottom: 18.74%; }
+}
+
+@keyframes vec5Animation {
+    0%, 100% { left: 67.9%; right: 9.35%; top: 25.25%; bottom: 42.54%; transform: matrix(0.8, 0.6, -0.55, 0.84, 0, 0); }
+    33% { left: 62.59%; right: 12.51%; top: 47.75%; bottom: 15.3%; transform: matrix(0.8, 0.6, -0.55, 0.84, 0, 0); }
+    66% { left: 54.97%; right: 16.16%; top: 35.61%; bottom: 21.56%; transform: matrix(0.8, 0.6, -0.55, 0.84, 0, 0); }
+}
+
+.anim-vec1 { animation: vec1Animation 18s ease-in-out infinite; }
+.anim-vec2 { animation: vec2Animation 18s ease-in-out infinite; }
+.anim-vec3 { animation: vec3Animation 18s ease-in-out infinite; }
+.anim-vec4 { animation: vec4Animation 18s ease-in-out infinite; }
+.anim-vec5 { animation: vec5Animation 18s ease-in-out infinite; }
