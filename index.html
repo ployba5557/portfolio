@@ -24,20 +24,20 @@
         </div>
     </div>
 
-    <!-- 2. แถบเมนูด้านบน (Sticky Top Bar Responsive) -->
+    <!-- 2. แถบเมนูด้านบน (แก้ให้รองรับจอ Oppo A18 ไม่ให้ล้น) -->
     <div class="sticky top-[15px] w-full max-w-[1168px] mx-auto px-4 h-[70px] p-[10px] z-50 flex justify-center animate-fade-in-down">
         <div class="w-full max-w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
     </div>
 
-    <!-- 3. Frame 6: โครงสร้างหลัก (Responsive Wrapper แต่รักษาพิกัดเดสก์ท็อป) -->
+    <!-- 3. โครงสร้างหลัก (แก้ให้จัดกึ่งกลางและยืดหยุ่นบนจอเล็ก แต่คงสเปกเดสก์ท็อป) -->
     <div class="absolute w-full max-w-[1440px] left-1/2 -translate-x-1/2 top-[134px] px-4 flex flex-col items-center gap-[32px] md:gap-[48px] z-20">
         
-        <!-- Header Text Block (ต้นฉบับเป๊ะ) -->
-        <div class="flex flex-col items-center gap-[72px]">
-            <div class="flex flex-col items-center gap-[120px]">
+        <!-- Header Text Block -->
+        <div class="flex flex-col items-center gap-[72px] w-full">
+            <div class="flex flex-col items-center gap-[120px] w-full">
                 
-                <!-- ชื่อ Pornpailin Phimprao -->
-                <div class="relative w-[310px] h-[48px] animate-fade-in-up">
+                <!-- ชื่อ Pornpailin Phimprao (เพิ่ม scale ย่อส่วนเล็กน้อยบนจอมือถือแคบๆ เช่น Oppo A18 เพื่อไม่ให้ชื่อขาดตอน) -->
+                <div class="relative w-[310px] h-[48px] animate-fade-in-up scale-[0.85] sm:scale-100 origin-center">
                     <div class="absolute h-[173px] left-[-12px] right-[-28px] top-[-15px] font-freehand font-normal text-[96px] leading-[173px] text-name-color whitespace-nowrap">
                         Pornpailin
                     </div>
@@ -47,7 +47,7 @@
                 </div>
 
                 <!-- PORTFOLIO -->
-                <div class="w-[331px] h-[48px] flex flex-row justify-center items-center gap-[12px] p-0 animate-final-portfolio">
+                <div class="w-[331px] h-[48px] flex flex-row justify-center items-center gap-[12px] p-0 animate-final-portfolio scale-[0.9] sm:scale-100 origin-center">
                     <span class="w-[26px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-p">P</span>
                     <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o1">O</span>
                     <span class="w-[27px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-r">R</span>
@@ -62,8 +62,8 @@
             </div>
         </div>
 
-        <!-- Frame 12: เรียงตามลำดับ Flex Column (ปรับลดระยะห่างระหว่าง PORTFOLIO กับรูปภาพลง) -->
-        <div class="flex flex-col items-center gap-[16px] md:gap-[24px] mt-[-20px] md:mt-[0px]">
+        <!-- Frame 12: รูปโปรไฟล์และปุ่ม -->
+        <div class="flex flex-col items-center gap-[16px] md:gap-[24px] mt-[-20px] md:mt-[0px] w-full">
             
             <!-- 1. รูปโปรไฟล์ -->
             <div class="w-[147px] h-[195px] bg-[#222] rounded-[40px] overflow-hidden border border-white/20 shadow-xl shrink-0 animate-profile-entrance">
@@ -71,7 +71,7 @@
             </div>
 
             <!-- 2. ข้อความบรรยาย -->
-            <div class="w-full max-w-[420px] font-inter font-normal text-[16px] leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance">
+            <div class="w-full max-w-[420px] font-inter font-normal text-[16px] leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance px-4">
                 Hi, My name’s Pornpailin Phimprao. <br>
                 I’m a Computer Engineering graduate <br>
                 with a strong passion for UX/UI Design.
