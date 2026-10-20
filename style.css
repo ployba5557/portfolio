@@ -6,10 +6,10 @@ body {
     background-color: #1A1A1A;
     color: #FFFFFF;
     width: 100%;
-    min-height: 3038px; /* คงความยาวการ Scroll เดิม */
+    min-height: 3038px; /* คงความยาวการ Scroll แนวตั้งเท่าเดิมเป๊ะๆ */
     margin: 0 auto;
     position: relative;
-    overflow-x: hidden; /* ป้องกันแถบเลื่อนด้านข้าง */
+    overflow-x: hidden;
     overflow-y: auto;
 }
 

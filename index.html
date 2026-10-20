@@ -13,7 +13,7 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- 1. พื้นหลัง Mesh Gradient (ปรับให้เต็มจอ Responsive) -->
+    <!-- 1. พื้นหลัง Mesh Gradient -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div class="absolute w-[2674px] h-[2116px] left-[calc(50%-1337px)] top-[calc(50%-1058px)] filter blur-[200px]">
             <div class="anim-vec1 absolute bg-[rgba(138,183,228,0.7)] transition-all"></div>
@@ -24,15 +24,15 @@
         </div>
     </div>
 
-    <!-- 2. แถบเมนูด้านบน (ปรับขนาดกว้างแบบยืดหยุ่นตามหน้าจอ) -->
+    <!-- 2. แถบเมนูด้านบน (Sticky Top Bar Responsive) -->
     <div class="sticky top-[15px] w-full max-w-[1168px] mx-auto px-4 h-[70px] p-[10px] z-50 flex justify-center animate-fade-in-down">
         <div class="w-full max-w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
     </div>
 
-    <!-- 3. Frame 6: โครงสร้างหลัก (คงขนาดและระยะห่างเดิม แต่จัดกึ่งกลางอัตโนมัติ) -->
-    <div class="absolute w-[1440px] left-[calc(50%-720px)] top-[134px] flex flex-col items-center gap-[48px] z-20">
+    <!-- 3. Frame 6: โครงสร้างหลัก (Responsive Wrapper แต่รักษาพิกัดเดสก์ท็อป) -->
+    <div class="absolute w-full max-w-[1440px] left-1/2 -translate-x-1/2 top-[134px] px-4 flex flex-col items-center gap-[32px] md:gap-[48px] z-20">
         
-        <!-- Header Text Block (คืนค่าระยะห่างเดิม 72px / 120px) -->
+        <!-- Header Text Block (ต้นฉบับเป๊ะ) -->
         <div class="flex flex-col items-center gap-[72px]">
             <div class="flex flex-col items-center gap-[120px]">
                 
@@ -62,8 +62,8 @@
             </div>
         </div>
 
-        <!-- Frame 12: เรียงตามลำดับ Flex Column -->
-        <div class="flex flex-col items-center gap-[32px]">
+        <!-- Frame 12: เรียงตามลำดับ Flex Column (ปรับลดระยะห่างระหว่าง PORTFOLIO กับรูปภาพลง) -->
+        <div class="flex flex-col items-center gap-[16px] md:gap-[24px] mt-[-20px] md:mt-[0px]">
             
             <!-- 1. รูปโปรไฟล์ -->
             <div class="w-[147px] h-[195px] bg-[#222] rounded-[40px] overflow-hidden border border-white/20 shadow-xl shrink-0 animate-profile-entrance">
