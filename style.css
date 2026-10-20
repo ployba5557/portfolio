@@ -2,12 +2,9 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #1A1A1A;
     color: #FFFFFF;
-    width: 1440px;
-    height: 3038px;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 .font-freehand {
@@ -85,7 +82,7 @@ body {
     opacity: 0;
 }
 
-/* ── Group 599 Exact Container Dimensions & Matrix Vector Animations ── */
+/* ── Matrix Vector Animations for Mesh Gradient ── */
 @keyframes vec1Animation {
     0%, 100% { left: 1.95%; right: 63.57%; top: 33.44%; bottom: 18.82%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
     33% { left: -6.45%; right: 73.35%; top: 34.96%; bottom: 15.45%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }

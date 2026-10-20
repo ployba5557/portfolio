@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1440, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pornpailin Phimprao - Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -11,11 +11,11 @@
     <!-- เชื่อมโยงไฟล์ CSS ภายนอก -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="min-h-screen bg-[#1A1A1A] text-[#FFFFFF] relative overflow-x-hidden">
 
-    <!-- 1. พื้นหลัง Mesh Gradient -->
+    <!-- 1. พื้นหลัง Mesh Gradient (ปรับขนาดให้ครอบคลุมทุกหน้าจอแบบ Responsive) -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute w-[2674px] h-[2116px] left-[calc(50%-1337px)] top-[calc(50%-1058px)] filter blur-[200px]">
+        <div class="absolute w-[200vw] h-[200vh] -left-[50vw] -top-[50vh] filter blur-[150px] md:blur-[200px]">
             <div class="anim-vec1 absolute bg-[rgba(138,183,228,0.7)] transition-all"></div>
             <div class="anim-vec2 absolute bg-[rgba(35,223,173,0.7)] transition-all"></div>
             <div class="anim-vec3 absolute bg-[rgba(160,227,164,0.7)] transition-all"></div>
@@ -24,46 +24,46 @@
         </div>
     </div>
 
-    <!-- 2. แถบเมนูด้านบน (Rectangle 1 ตามสเปก Figma เป๊ะๆ อยู่เลเยอร์บนสุด z-50) -->
-    <div class="sticky top-[15px] w-[1168px] h-[70px] mx-[136px] p-[10px] z-50 flex justify-center animate-fade-in-down">
-        <div class="w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
-    </div>
+    <!-- 2. แถบเมนูด้านบน (Sticky Top Bar - รองรับ Responsive Width) -->
+    <header class="sticky top-4 w-full px-4 md:px-12 z-50 flex justify-center animate-fade-in-down">
+        <div class="w-full max-w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
+    </header>
 
-    <!-- 3. Frame 6: โครงสร้างหลัก -->
-    <div class="absolute w-[1440px] left-[calc(50%-720px)] top-[134px] flex flex-col items-center gap-[48px] z-20">
+    <!-- 3. โครงสร้างหลัก (Main Content) -->
+    <main class="relative w-full max-w-[1440px] mx-auto px-4 md:px-12 pt-12 pb-24 flex flex-col items-center gap-12 z-20">
         
         <!-- Header Text Block -->
-        <div class="flex flex-col items-center gap-[72px]">
-            <div class="flex flex-col items-center gap-[120px]">
+        <div class="flex flex-col items-center gap-12 md:gap-[72px] w-full">
+            <div class="flex flex-col items-center gap-16 md:gap-[120px] w-full text-center">
                 
-                <!-- ชื่อ Pornpailin Phimprao -->
-                <div class="relative w-[310px] h-[48px] animate-fade-in-up">
-                    <div class="absolute h-[173px] left-[-12px] right-[-28px] top-[-15px] font-freehand font-normal text-[96px] leading-[173px] text-name-color whitespace-nowrap">
+                <!-- ชื่อ Pornpailin Phimprao (Responsive Font & Spacing) -->
+                <div class="relative w-full max-w-[310px] h-[48px] animate-fade-in-up flex justify-center">
+                    <div class="absolute font-freehand font-normal text-[64px] md:text-[96px] leading-[1.2] text-name-color whitespace-nowrap -top-4">
                         Pornpailin
                     </div>
-                    <div class="absolute h-[87px] left-[159px] right-[-81px] top-[90px] font-freehand font-normal text-[48px] leading-[87px] text-name-color whitespace-nowrap">
+                    <div class="absolute font-freehand font-normal text-[36px] md:text-[48px] leading-[1.2] text-name-color whitespace-nowrap top-14 md:top-20 left-1/2 -translate-x-1/2 md:left-[159px] md:translate-x-0">
                         Phimprao
                     </div>
                 </div>
 
                 <!-- PORTFOLIO -->
-                <div class="w-[331px] h-[48px] flex flex-row justify-center items-center gap-[12px] p-0 animate-final-portfolio">
-                    <span class="w-[26px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-p">P</span>
-                    <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o1">O</span>
-                    <span class="w-[27px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-r">R</span>
-                    <span class="w-[27px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-t">T</span>
-                    <span class="w-[24px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-f">F</span>
-                    <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o2">O</span>
-                    <span class="w-[23px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-l">L</span>
-                    <span class="w-[12px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-i">I</span>
-                    <span class="w-[32px] h-[48px] font-inter font-bold text-[40px] leading-[48px] text-center text-name-color flex-none letter-o3">O</span>
+                <div class="w-full max-w-[331px] h-[48px] flex flex-row justify-center items-center gap-2 md:gap-[12px] p-0 animate-final-portfolio mt-16 md:mt-12">
+                    <span class="w-[26px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-p">P</span>
+                    <span class="w-[32px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-o1">O</span>
+                    <span class="w-[27px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-r">R</span>
+                    <span class="w-[27px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-t">T</span>
+                    <span class="w-[24px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-f">F</span>
+                    <span class="w-[32px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-o2">O</span>
+                    <span class="w-[23px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-l">L</span>
+                    <span class="w-[12px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-i">I</span>
+                    <span class="w-[32px] h-[48px] font-inter font-bold text-[32px] md:text-[40px] leading-[48px] text-center text-name-color flex-none letter-o3">O</span>
                 </div>
 
             </div>
         </div>
 
-        <!-- Frame 12: เรียงตามลำดับ Flex Column -->
-        <div class="flex flex-col items-center gap-[32px]">
+        <!-- Frame 12: โปรไฟล์และรายละเอียด -->
+        <div class="flex flex-col items-center gap-8 mt-8 md:mt-4 w-full">
             
             <!-- 1. รูปโปรไฟล์ -->
             <div class="w-[147px] h-[195px] bg-[#222] rounded-[40px] overflow-hidden border border-white/20 shadow-xl shrink-0 animate-profile-entrance">
@@ -71,7 +71,7 @@
             </div>
 
             <!-- 2. ข้อความบรรยาย -->
-            <div class="w-full max-w-[420px] font-inter font-normal text-[16px] leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance">
+            <div class="w-full max-w-[420px] px-4 font-inter font-normal text-[15px] md:text-[16px] leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance">
                 Hi, My name’s Pornpailin Phimprao. <br>
                 I’m a Computer Engineering graduate <br>
                 with a strong passion for UX/UI Design.
@@ -85,7 +85,7 @@
                 
                 <!-- ตัวปุ่มหลัก -->
                 <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[20px] py-[10px] gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
-                    <span class="font-inter font-medium text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">See more</span>
+                    <span class="font-inter font-medium text-[18px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">See more</span>
                     
                     <div class="w-[24px] h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
                         <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@
 
         </div>
 
-    </div>
+    </main>
 
 </body>
 </html>
