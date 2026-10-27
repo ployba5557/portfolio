@@ -71,17 +71,17 @@
                         </div>
                     </div>
 
-                    <!-- PORTFOLIO -->
+                    <!-- PORTFOLIO (ปรับแก้ขนาดตัวอักษรทุกตัวให้เท่ากันทั้งหมดอย่างสมส่วน) -->
                     <div class="w-full max-w-[300px] sm:max-w-[331px] h-[26px] sm:h-[32px] md:h-[48px] flex flex-row justify-center items-center gap-[4px] sm:gap-[6px] md:gap-[12px] p-0 animate-final-portfolio shrink-0">
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-p">P</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-o1">O</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-r">R</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-t">T</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-f">F</span>
-                        <span class="font-inter font-bold text-[26px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-o2">O</span>
-                        <span class="font-inter font-bold text-[26px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-l">L</span>
-                        <span class="font-inter font-bold text-[26px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-i">I</span>
-                        <span class="font-inter font-bold text-[26px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none letter-o3">O</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">P</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">R</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">T</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">F</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">L</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">I</span>
+                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
                     </div>
 
                 </div>
@@ -208,7 +208,6 @@
             }
         });
 
-        // ตรวจจับเมื่อผู้ใช้งานสลับแท็บหรือกดกลับมาจากลิงก์ภายนอก เพื่อดึงหน้าจอให้กลับมากึ่งกลางแกน X เสมอ
         window.addEventListener('pageshow', function(event) {
             if (window.scrollX !== 0) {
                 window.scrollTo(0, window.scrollY);
