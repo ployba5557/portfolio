@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /* ── Global Styles & Length ── */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #1A1A1A;
@@ -100,35 +104,35 @@ body {
     opacity: 0;
 }
 
-/* ── Mesh Background Vector Animations ── */
+/* ── Mesh Background Vector Animations (ค่าตั้งต้นดั้งเดิม) ── */
 @keyframes vec1Animation {
-    0%, 100% { left: 10%; top: 30%; width: 45%; height: 45%; transform: rotate(0deg); }
-    33%      { left: 0%;   top: 35%; width: 50%; height: 40%; transform: rotate(15deg); }
-    66%      { left: -5%;  top: 10%; width: 40%; height: 50%; transform: rotate(-10deg); }
+    0%, 100% { left: 1.95%; right: 63.57%; top: 33.44%; bottom: 18.82%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
+    33% { left: -6.45%; right: 73.35%; top: 34.96%; bottom: 15.45%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
+    66% { left: -8.15%; right: 75.04%; top: 4.16%; bottom: 46.24%; transform: matrix(0.64, -0.77, 0.72, 0.69, 0, 0); }
 }
 
 @keyframes vec2Animation {
-    0%, 100% { left: 5%;  top: 5%;  width: 50%; height: 50%; transform: rotate(0deg); }
-    33%      { left: 10%; top: 0%;  width: 45%; height: 55%; transform: rotate(-20deg); }
-    66%      { left: 25%; top: 2%;  width: 55%; height: 45%; transform: rotate(10deg); }
+    0%, 100% { left: 0%; right: 69.02%; top: 0%; bottom: 53.04%; transform: matrix(0.6, 0.8, -0.75, 0.66, 0, 0); }
+    33% { left: 4.23%; right: 60.88%; top: -3.22%; bottom: 45.61%; transform: matrix(0.6, 0.8, -0.75, 0.66, 0, 0); }
+    66% { left: 24.13%; right: 46.23%; top: -2.87%; bottom: 53.92%; transform: matrix(0.6, 0.8, -0.75, 0.66, 0, 0); }
 }
 
 @keyframes vec3Animation {
-    0%, 100% { left: 40%; top: 45%; width: 40%; height: 40%; }
-    33%      { left: 30%; top: 50%; width: 45%; height: 45%; }
-    66%      { left: 20%; top: 52%; width: 50%; height: 35%; }
+    0%, 100% { left: 42.88%; right: 18.45%; top: 47.6%; bottom: 14.26%; }
+    33%      { left: 31.21%; right: 25.45%; top: 51.06%; bottom: 6.23%; }
+    66%      { left: 20.63%; right: 40.7%; top: 53.34%; bottom: 8.53%; }
 }
 
 @keyframes vec4Animation {
-    0%, 100% { left: 35%; top: 8%;  width: 50%; height: 50%; }
-    33%      { left: 50%; top: 15%; width: 40%; height: 45%; }
-    66%      { left: 40%; top: 18%; width: 45%; height: 55%; }
+    0%, 100% { left: 34.14%; right: 13.92%; top: 7.76%; bottom: 37.89%; }
+    33%      { left: 50.53%; right: -2.46%; top: 17.3%; bottom: 28.35%; }
+    66%      { left: 41.16%; right: -2.59%; top: 18.74%; bottom: 18.74%; }
 }
 
 @keyframes vec5Animation {
-    0%, 100% { left: 65%; top: 25%; width: 35%; height: 40%; transform: rotate(0deg); }
-    33%      { left: 60%; top: 45%; width: 40%; height: 35%; transform: rotate(25deg); }
-    66%      { left: 50%; top: 35%; width: 45%; height: 45%; transform: rotate(-15deg); }
+    0%, 100% { left: 67.9%; right: 9.35%; top: 25.25%; bottom: 42.54%; transform: matrix(0.8, 0.6, -0.55, 0.84, 0, 0); }
+    33% { left: 62.59%; right: 12.51%; top: 47.75%; bottom: 15.3%; transform: matrix(0.8, 0.6, -0.55, 0.84, 0, 0); }
+    66% { left: 54.97%; right: 16.16%; top: 35.61%; bottom: 21.56%; transform: matrix(0.8, 0.6, -0.55, 0.84, 0, 0); }
 }
 
 .anim-vec1 { animation: vec1Animation 18s ease-in-out infinite; }
