@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <!-- PORTFOLIO (ปรับแก้ขนาดตัวอักษรทุกตัวให้เท่ากันทั้งหมดอย่างสมส่วน) -->
+                    <!-- PORTFOLIO -->
                     <div class="w-full max-w-[300px] sm:max-w-[331px] h-[26px] sm:h-[32px] md:h-[48px] flex flex-row justify-center items-center gap-[4px] sm:gap-[6px] md:gap-[12px] p-0 animate-final-portfolio shrink-0">
                         <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">P</span>
                         <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
@@ -120,38 +120,41 @@
         </div>
 
         <!-- ส่วนที่ 2: Frame 26 - Profile & Bio Detail Section -->
-        <div id="about-section" class="w-full max-w-[1148px] py-[30px] sm:py-[40px] px-2 sm:px-4 md:px-0 flex flex-col md:flex-row items-center md:items-start gap-[16px] sm:gap-[24px] md:gap-[40px]">
+        <div id="about-section" class="w-full max-w-[1148px] py-[30px] sm:py-[40px] px-2 sm:px-4 md:px-0 flex flex-col md:flex-row items-center md:items-stretch gap-[16px] sm:gap-[24px] md:gap-[40px]">
             
-            <!-- Frame 25: รูปภาพโปรไฟล์ -->
-            <div class="w-[160px] sm:w-[200px] md:w-[267px] h-[210px] sm:h-[265px] md:h-[355px] rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 shadow-2xl shrink-0">
+            <!-- Frame 25: รูปภาพโปรไฟล์ (ขยายความสูงพอดีกับเนื้อหาฝั่งขวาบน Desktop และปรับตามความเหมาะสมบนมือถือ) -->
+            <div class="w-[160px] sm:w-[200px] md:w-[267px] h-[210px] sm:h-[265px] md:h-auto rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 shadow-2xl shrink-0">
                 <img src="img/profile2.png" onerror="this.src='image_7bfafc.jpg'" alt="Pornpailin Phimprao Photo" class="w-full h-full object-cover">
             </div>
 
             <!-- Frame 24 / Frame 23: ข้อความรายละเอียด (ชิดซ้าย) และปุ่มแอ็กชัน -->
-            <div class="w-full flex-1 flex flex-col items-start text-left gap-[10px] sm:gap-[14px] md:gap-[16px] px-1 sm:px-0">
+            <div class="w-full flex-1 flex flex-col items-start text-left justify-between gap-[10px] sm:gap-[14px] md:gap-[16px] px-1 sm:px-0">
                 
-                <!-- ชื่อและตำแหน่ง -->
-                <h2 class="w-full font-inter font-semibold text-[18px] sm:text-[22px] md:text-[40px] leading-[24px] sm:leading-[30px] md:leading-[48px] text-[rgba(255,255,255,0.9)] text-left">
-                    Pornpailin Phimprao 
-                    <span class="block sm:inline font-normal text-[14px] sm:text-[18px] md:text-[36px] text-[rgba(255,255,255,0.55)]">| UX/UI Designer</span>
-                </h2>
+                <div class="w-full flex flex-col gap-[10px] sm:gap-[14px] md:gap-[16px]">
+                    <!-- ชื่อและตำแหน่ง -->
+                    <h2 class="w-full font-inter font-semibold text-[18px] sm:text-[22px] md:text-[40px] leading-[24px] sm:leading-[30px] md:leading-[48px] text-[rgba(255,255,255,0.9)] text-left">
+                        Pornpailin Phimprao 
+                        <span class="block sm:inline font-normal text-[14px] sm:text-[18px] md:text-[36px] text-[rgba(255,255,255,0.55)]">| UX/UI Designer</span>
+                    </h2>
 
-                <!-- วุฒิการศึกษา -->
-                <div class="w-full font-inter font-light text-[12px] sm:text-[14px] md:text-[24px] leading-[16px] sm:leading-[19px] md:leading-[29px] text-[rgba(255,255,255,0.7)] space-y-0.5 text-left">
-                    <p>Bachelor of Engineering in Computer Engineering (2nd Class Honors)</p>
-                    <p>Kasetsart University Chalermphrakiat Sakon Nakhon Province Campus</p>
-                    <p>GPAX: 3.34</p>
-                </div>
+                    <!-- วุฒิการศึกษา -->
+                    <div class="w-full font-inter font-light text-[12px] sm:text-[14px] md:text-[24px] leading-[16px] sm:leading-[19px] md:leading-[29px] text-[rgba(255,255,255,0.7)] space-y-0.5 text-left">
+                        <p>Bachelor of Engineering in Computer Engineering (2nd Class Honors)</p>
+                        <p>Kasetsart University Chalermphrakiat Sakon Nakhon Province Campus</p>
+                        <p>GPAX: 3.34</p>
+                    </div>
 
-                <!-- ข้อมูลส่วนตัว Personal Details -->
-                <div class="w-full font-inter font-light text-[12px] sm:text-[14px] md:text-[20px] leading-[16px] sm:leading-[19px] md:leading-[24px] text-[rgba(255,255,255,0.7)] text-left">
-                    <p class="mb-0.5 font-normal text-white/80">Personal Details:</p>
-                    <ul class="list-disc list-inside space-y-0.5 sm:space-y-1 pl-1 text-left">
-                        <li>Date of Birth: 12 Nov 2003 (Age: 23)</li>
-                        <li>Nationality: Thai</li>
-                        <li>Location: Singburi, Thailand</li>
-                        <li><strong class="font-bold text-white">Contact:</strong> <a href="mailto:pornpailin.phim@gmail.com" class="hover:underline font-bold text-white">pornpailin.phim@gmail.com</a> | <strong class="font-bold text-white">092-5060596</strong></li>
-                    </ul>
+                    <!-- ข้อมูลส่วนตัว Personal Details (เพิ่ม Work Setup แล้ว) -->
+                    <div class="w-full font-inter font-light text-[12px] sm:text-[14px] md:text-[20px] leading-[16px] sm:leading-[19px] md:leading-[24px] text-[rgba(255,255,255,0.7)] text-left">
+                        <p class="mb-0.5 font-normal text-white/80">Personal Details:</p>
+                        <ul class="list-disc list-inside space-y-0.5 sm:space-y-1 pl-1 text-left">
+                            <li>Date of Birth: 12 Nov 2003 (Age: 23)</li>
+                            <li>Nationality: Thai</li>
+                            <li>Location: Singburi, Thailand</li>
+                            <li>Work Setup: On-site, Remote/WFH, Hybrid</li>
+                            <li><strong class="font-bold text-white">Contact:</strong> <a href="mailto:pornpailin.phim@gmail.com" class="hover:underline font-bold text-white">pornpailin.phim@gmail.com</a> | <strong class="font-bold text-white">092-5060596</strong></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Frame 20: ปุ่ม Resume และ Transcript -->
