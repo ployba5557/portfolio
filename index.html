@@ -31,6 +31,10 @@
             overflow-x: hidden;
             position: relative;
             background-color: #1A1A1A;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
         }
         /* คลาสสำหรับแต่ละ Section ให้บล็อกสไลด์พอดีเต็มจอทุกอุปกรณ์ */
         .section-snap {
@@ -41,21 +45,25 @@
             scroll-snap-stop: always;
             box-sizing: border-box;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body class="viewport-container">
 
-    <!-- 1. พื้นหลัง Mesh Gradient รักษาอัตราส่วนและมีสีดำแทรก (ต้นแบบดั้งเดิม) -->
+    <!-- 1. พื้นหลัง Mesh Gradient แบบดั้งเดิม -->
     <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0 bg-[#1A1A1A]">
-        <div class="absolute w-[2674px] h-[2116px] left-[calc(50%-1337px)] top-[calc(50%-1058px)] filter blur-[200px] pointer-events-none opacity-90">
+        <div class="absolute w-[2674px] h-[2116px] left-[calc(50%-1337px)] top-[calc(50%-1058px)] filter blur-[200px] pointer-events-none opacity-90 scale-[0.6] sm:scale-[0.8] md:scale-100 transition-transform">
             <div class="anim-vec1 absolute bg-[rgba(138,183,228,0.7)] transition-all"></div>
             <div class="anim-vec2 absolute bg-[rgba(35,223,173,0.7)] transition-all"></div>
             <div class="anim-vec3 absolute bg-[rgba(160,227,164,0.7)] transition-all"></div>
             <div class="anim-vec4 absolute bg-[rgba(97,145,217,0.7)] transition-all"></div>
             <div class="anim-vec5 absolute bg-[rgba(205,213,116,0.7)] transition-all"></div>
         </div>
-        <!-- เลเยอร์สีดำโปร่งแสงแทรกสร้างมิติให้เหมือนต้นแบบ -->
+        <!-- เลเยอร์สีดำโปร่งแสงแทรกสร้างมิติ -->
         <div class="absolute inset-0 bg-radial from-transparent via-[#1A1A1A]/40 to-[#1A1A1A]/80 pointer-events-none"></div>
     </div>
 
@@ -64,11 +72,11 @@
         <div class="w-full max-w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
     </div>
 
-    <!-- 3. โครงสร้างหลัก แบ่ง 3 Section แบบ Scroll Snap -->
-    <main class="relative w-full z-20">
+    <!-- 3. โครงสร้างหลัก แบ่งเป็น 3 Section แบบ Scroll Snap เต็มจอ -->
+    <main class="relative w-full z-25">
         
         <!-- SECTION 1: HERO BLOCK -->
-        <section id="hero-section" class="section-snap flex flex-col justify-center items-center px-4 pt-[70px] pb-6">
+        <section id="hero-section" class="section-snap px-4 pt-[70px] pb-6">
             <div class="flex flex-col items-center justify-center gap-[12px] sm:gap-[20px] md:gap-[32px] w-full max-w-[1200px] my-auto">
                 
                 <!-- Header Text Block -->
@@ -127,7 +135,7 @@
         </section>
 
         <!-- SECTION 2: ABOUT / BIO DETAILS -->
-        <section id="about-section" class="section-snap flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 py-[70px]">
+        <section id="about-section" class="section-snap px-4 sm:px-6 md:px-8 py-[70px]">
             <div class="w-full max-w-[1148px] my-auto flex flex-col md:flex-row items-center md:items-stretch gap-[20px] sm:gap-[28px] md:gap-[40px]">
                 
                 <!-- Profile Image 2 -->
@@ -189,13 +197,13 @@
         </section>
 
         <!-- SECTION 3: PROJECT CAROUSEL -->
-        <section id="project-section" class="section-snap flex flex-col justify-center items-center px-4 pt-[70px] pb-6">
+        <section id="project-section" class="section-snap px-4 pt-[70px] pb-6">
             <div class="w-full max-w-[1440px] my-auto flex flex-col items-center gap-[16px] sm:gap-[36px] md:gap-[50px]">
                 <h2 class="font-inter font-normal text-[24px] sm:text-[40px] md:text-[48px] leading-none text-center text-white tracking-tight">
                     Project
                 </h2>
 
-                <div class="relative w-full max-w-[1200px] h-[460px] sm:h-[490px] md:h-[520px] flex items-center justify-center overflow-hidden px-2 sm:px-4">
+                <div class="relative w-full max-w-[1200px] h-[480px] sm:h-[510px] md:h-[550px] flex items-center justify-center overflow-hidden px-2 sm:px-4">
                     <!-- ปุ่มกดเลื่อนซ้าย -->
                     <button id="carousel-prev" class="absolute left-1 sm:left-4 md:left-10 z-40 w-[36px] h-[36px] sm:w-[50px] sm:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
                         <svg class="w-4 h-4 sm:w-6 sm:h-6 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
@@ -214,14 +222,25 @@
 
     </main>
 
-    <!-- JavaScript ควบคุมการทำงานทั้งหมด -->
+    <!-- JavaScript ควบคุมการทำงานและการ์ด Project -->
     <script>
-        // Smooth scroll สำหรับปุ่ม See more
         document.getElementById('see-more-btn').addEventListener('click', function(e) {
             e.preventDefault();
             const targetSection = document.getElementById('about-section');
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('pageshow', function(event) {
+            if (window.scrollX !== 0) {
+                window.scrollTo(0, window.scrollY);
+            }
+        });
+
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && window.scrollX !== 0) {
+                window.scrollTo(0, window.scrollY);
             }
         });
 
@@ -241,8 +260,7 @@
                 ],
                 desc: "Designed for a UX/UI designer job application, featuring a dynamic mesh gradient animation background and liquid glass effects for buttons and cards.",
                 figmaUrl: "https://www.figma.com/proto/ZZZ7Cb8B07TF0UJeUwdWxW/Portfolio?node-id=2-958&t=3bbMKL7opdVwHYMc-8&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A958&hide-ui=1",
-                githubUrl: "https://github.com/ployba5557/portfolio",
-                letterSpacing: "-0.05em"
+                githubUrl: "https://github.com/ployba5557/portfolio"
             },
             {
                 title: "PM Project",
@@ -275,8 +293,7 @@
                     { name: "Prototype", bg: "rgba(28, 188, 255, 0.2)" }
                 ],
                 desc: "Designed a comprehensive authentication and security system, covering user login, registration, password recovery, profile management, and account security settings.",
-                figmaUrl: "https://www.figma.com/design/UzZtgB4Ex0Yv1xgHcGE9oi/Settrade-Open-API?node-id=0-1&t=sAOFV4uyRxXRjVmI-1",
-                letterSpacing: "-0.08em"
+                figmaUrl: "https://www.figma.com/design/UzZtgB4Ex0Yv1xgHcGE9oi/Settrade-Open-API?node-id=0-1&t=sAOFV4uyRxXRjVmI-1"
             },
             {
                 title: "CSC.KU Farming Game",
@@ -289,8 +306,7 @@
                 ],
                 desc: "Developed as part of a Bachelor’s thesis, this exploration game lets players take on the role of a student to explore Kasetsart University Chalermphrakiat Sakon Nakhon Province Campus and complete interactive campus quests.",
                 itchUrl: "https://ployba5557.itch.io/cscku-farming-game",
-                githubUrl: "https://github.com/ployba5557/FarmingGame",
-                letterSpacing: "-0.07em"
+                githubUrl: "https://github.com/ployba5557/FarmingGame"
             },
             {
                 title: "Necinema",
@@ -301,8 +317,7 @@
                     { name: "Prototype", bg: "rgba(28, 188, 255, 0.2)" }
                 ],
                 desc: "Developed as part of a Software Engineering course to practice defining software standards, selecting appropriate development tools, and creating comprehensive product documentation.",
-                figmaUrl: "https://www.figma.com/proto/S3toknpn7KCAtlITgLCvii/Necinema?node-id=1-687&t=rsQkqeioM9z0PGrK-8&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
-                letterSpacing: "0.02em"
+                figmaUrl: "https://www.figma.com/proto/S3toknpn7KCAtlITgLCvii/Necinema?node-id=1-687&t=rsQkqeioM9z0PGrK-8&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&hide-ui=1"
             }
         ];
 
@@ -328,19 +343,19 @@
                 const baseClasses = "absolute transition-all duration-500 ease-in-out backdrop-blur-md border border-white/20 bg-[#d9d9d9]/20 flex flex-col justify-between";
                 
                 if (isMain) {
-                    card.className = `${baseClasses} z-30 w-[275px] sm:w-[390px] md:w-[453.8px] h-[435px] sm:h-[453px] p-[12px] sm:p-[32px] rounded-[24px] sm:rounded-[50px] shadow-2xl scale-100 opacity-100 translate-x-0 group/card`;
+                    // ปรับ padding ให้สมดุลเท่ากันทุกด้าน และเพิ่มระยะห่างระหว่างเนื้อหากับปุ่มด้วย flex และ gap ที่เหมาะสม
+                    card.className = `${baseClasses} z-30 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[480px] md:h-[500px] p-[16px] sm:p-[24px] md:p-[28px] rounded-[24px] sm:rounded-[40px] shadow-2xl scale-100 opacity-100 translate-x-0 group/card`;
                 } else if (offset === -1) {
-                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[360px] p-[20px] rounded-[40px] shadow-lg scale-90 opacity-50 -translate-x-[280px] lg:-translate-x-[340px] cursor-pointer`;
+                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[380px] p-[20px] rounded-[30px] shadow-lg scale-90 opacity-50 -translate-x-[280px] lg:-translate-x-[340px] cursor-pointer`;
                     card.onclick = () => { currentIndex = index; renderCarousel(); };
                 } else if (offset === 1) {
-                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[360px] p-[24px] rounded-[40px] shadow-lg scale-90 opacity-50 translate-x-[280px] lg:translate-x-[340px] cursor-pointer`;
+                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[380px] p-[20px] rounded-[30px] shadow-lg scale-90 opacity-50 translate-x-[280px] lg:translate-x-[340px] cursor-pointer`;
                     card.onclick = () => { currentIndex = index; renderCarousel(); };
                 }
 
-                // ปรับขนาดแท็กตามประเภทการ์ด
                 const tagsHTML = project.tags.map(t => {
                     const tagClass = isMain 
-                        ? "px-[6px] py-[1px] sm:px-[13px] sm:py-[1px] rounded-[5px] sm:rounded-[7px] text-[9px] sm:text-[16px] text-white/80 font-inter leading-none"
+                        ? "px-[8px] py-[2px] sm:px-[10px] sm:py-[3px] rounded-[6px] text-[10px] sm:text-[13px] text-white/80 font-inter leading-none"
                         : "px-[6px] py-[1px] rounded-[5px] text-[10px] text-white/80 font-inter leading-none";
                     return `<span class="${tagClass}" style="background: ${t.bg}">${t.name}</span>`;
                 }).join('');
@@ -348,33 +363,33 @@
                 let buttonsHTML = '';
                 if (isMain) {
                     if (project.figmaUrl) {
-                        buttonsHTML += `<a href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[200px] h-[28px] sm:h-[34px] cursor-pointer group/btn shrink-0 rounded-[16px] sm:rounded-[18px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+                        buttonsHTML += `<a href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[180px] h-[32px] sm:h-[36px] cursor-pointer group/btn shrink-0 rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
                             <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[8px] sm:px-[20px] py-[4px] gap-[2px] backdrop-blur-md relative z-10 transition-all duration-500">
-                                <span class="font-inter font-medium text-[12px] sm:text-[20px] leading-[20px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in Figma</span>
-                                <div class="w-[14px] sm:w-[24px] h-[14px] sm:h-[24px] flex items-center justify-center shrink-0">
+                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] py-[4px] gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
+                                <span class="font-inter font-medium text-[12px] sm:text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in Figma</span>
+                                <div class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] flex items-center justify-center shrink-0">
                                     <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
                                 </div>
                             </div>
                         </a>`;
                     }
                     if (project.itchUrl) {
-                        buttonsHTML += `<a href="${project.itchUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[200px] h-[28px] sm:h-[34px] cursor-pointer group/btn shrink-0 rounded-[16px] sm:rounded-[18px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+                        buttonsHTML += `<a href="${project.itchUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[180px] h-[32px] sm:h-[36px] cursor-pointer group/btn shrink-0 rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
                             <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[8px] sm:px-[20px] py-[4px] gap-[2px] backdrop-blur-md relative z-10 transition-all duration-500">
-                                <span class="font-inter font-medium text-[12px] sm:text-[20px] leading-[20px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in itch.io</span>
-                                <div class="w-[14px] sm:w-[24px] h-[14px] sm:h-[24px] flex items-center justify-center shrink-0">
+                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] py-[4px] gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
+                                <span class="font-inter font-medium text-[12px] sm:text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in itch.io</span>
+                                <div class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] flex items-center justify-center shrink-0">
                                     <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
                                 </div>
                             </div>
                         </a>`;
                     }
                     if (project.githubUrl) {
-                        buttonsHTML += `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[134px] h-[28px] sm:h-[34px] cursor-pointer group/btn shrink-0 rounded-[16px] sm:rounded-[18px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+                        buttonsHTML += `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[120px] h-[32px] sm:h-[36px] cursor-pointer group/btn shrink-0 rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
                             <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[8px] sm:px-[20px] py-[4px] gap-[2px] backdrop-blur-md relative z-10 transition-all duration-500">
-                                <span class="font-inter font-medium text-[12px] sm:text-[20px] leading-[20px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">GitHub</span>
-                                <div class="w-[14px] sm:w-[24px] h-[14px] sm:h-[24px] flex items-center justify-center shrink-0">
+                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] py-[4px] gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
+                                <span class="font-inter font-medium text-[12px] sm:text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">GitHub</span>
+                                <div class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] flex items-center justify-center shrink-0">
                                     <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                                 </div>
                             </div>
@@ -382,49 +397,44 @@
                     }
                 } else {
                     buttonsHTML += `
-                        <div class="relative w-[112px] h-[24px] cursor-default shrink-0 rounded-[12px] overflow-hidden border border-white/10 shadow-sm isolation-isolate inline-block text-center opacity-80">
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] flex flex-row justify-center items-center px-[10px] py-[2px] gap-[4px] backdrop-blur-md">
-                                <span class="font-inter font-medium text-[11px] leading-[16px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in Figma</span>
-                            </div>
-                        </div>
-                        <div class="relative w-[82px] h-[24px] cursor-default shrink-0 rounded-[12px] overflow-hidden border border-white/10 shadow-sm isolation-isolate inline-block text-center opacity-80">
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] flex flex-row justify-center items-center px-[10px] py-[2px] gap-[4px] backdrop-blur-md">
-                                <span class="font-inter font-medium text-[11px] leading-[16px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">GitHub</span>
+                        <div class="relative w-[100px] h-[24px] cursor-default shrink-0 rounded-[12px] overflow-hidden border border-white/10 shadow-sm isolation-isolate inline-block text-center opacity-80">
+                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] flex flex-row justify-center items-center px-[8px] py-[2px] gap-[4px] backdrop-blur-md">
+                                <span class="font-inter font-medium text-[10px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in Figma</span>
                             </div>
                         </div>
                     `;
                 }
 
+                // ปรับ letter-spacing ให้ชิดกันกระชับยิ่งขึ้น (-0.03em) และเพิ่มความสบายตา
                 const descClass = isMain 
-                    ? "font-inter font-normal text-[10px] sm:text-[16px] leading-[13px] sm:leading-[19px] text-white/80 text-justify tracking-tight"
-                    : "font-inter font-normal text-[10px] leading-[12px] text-white/80 text-justify tracking-tight";
+                    ? "font-inter font-normal text-[11px] sm:text-[13px] md:text-[14px] leading-[14px] sm:leading-[17px] text-white/80 text-justify tracking-[-0.03em]"
+                    : "font-inter font-normal text-[10px] leading-[12px] text-white/80 text-justify tracking-[-0.03em]";
 
                 const titleClass = isMain
-                    ? "font-inter font-medium text-[13px] sm:text-[20px] text-white tracking-tight leading-none"
-                    : "font-inter font-medium text-[12px] text-white tracking-tight leading-none";
+                    ? "font-inter font-medium text-[14px] sm:text-[18px] md:text-[20px] text-white tracking-[-0.02em] leading-none"
+                    : "font-inter font-medium text-[12px] text-white tracking-[-0.02em] leading-none";
 
                 const imgContainerClass = isMain
-                    ? "w-full h-[105px] sm:h-[198px] rounded-[14px] sm:rounded-[18px] overflow-hidden bg-black/40"
-                    : "w-full h-[109px] rounded-[16px] overflow-hidden bg-black/40";
+                    ? "w-full h-[115px] sm:h-[150px] md:h-[170px] rounded-[14px] sm:rounded-[18px] overflow-hidden bg-black/40 shrink-0"
+                    : "w-full h-[109px] rounded-[16px] overflow-hidden bg-black/40 shrink-0";
 
                 const imgTransformClass = isMain 
                     ? "w-full h-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-110" 
                     : "w-full h-full object-cover";
 
-                const customStyle = project.letterSpacing ? `style="letter-spacing: ${project.letterSpacing};"` : '';
-
                 card.innerHTML = `
-                    <div class="flex flex-col gap-[3px] sm:gap-[6px] w-full">
+                    <div class="flex flex-col gap-[6px] sm:gap-[8px] w-full">
                         <div class="${imgContainerClass}">
                             <img src="${project.img}" onerror="this.src='${project.fallbackImg}'" class="${imgTransformClass}">
                         </div>
-                        <div class="flex flex-wrap gap-[3px] sm:gap-[6px] items-center pt-0.5">
+                        <div class="flex flex-wrap gap-[4px] sm:gap-[6px] items-center">
                             ${tagsHTML}
                         </div>
-                        <h3 class="${titleClass} pt-0.5">${project.title}</h3>
-                        <p class="${descClass} pt-0.5" ${customStyle}>${project.desc}</p>
+                        <h3 class="${titleClass}">${project.title}</h3>
+                        <p class="${descClass}">${project.desc}</p>
                     </div>
-                    <div class="flex flex-row items-center gap-[6px] pt-1 w-full">
+                    <!-- เพิ่มระยะห่าง (Spacing) ระหว่างเนื้อหาด้านบนกับปุ่มด้านล่างให้สมดุลสวยงาม -->
+                    <div class="flex flex-row items-center gap-[8px] pt-3 sm:pt-4 w-full">
                         ${buttonsHTML}
                     </div>
                 `;
