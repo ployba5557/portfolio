@@ -107,9 +107,9 @@
 
                 </div>
 
-                <!-- Profile Image & See More Button -->
+                <!-- Profile Image & See More Button (ลบขอบออกแล้ว) -->
                 <div class="flex flex-col items-center gap-[10px] sm:gap-[14px] md:gap-[20px] w-full shrink-0">
-                    <div class="w-[90px] sm:w-[120px] md:w-[147px] h-[115px] sm:h-[155px] md:h-[195px] bg-[#222] rounded-[22px] md:rounded-[40px] overflow-hidden border border-white/20 shadow-xl shrink-0 animate-profile-entrance">
+                    <div class="w-[90px] sm:w-[120px] md:w-[147px] h-[115px] sm:h-[155px] md:h-[195px] bg-[#222] rounded-[22px] md:rounded-[40px] overflow-hidden shadow-xl shrink-0 animate-profile-entrance">
                         <img src="img/profile1.png" onerror="this.src='image_d3d8df.png'" alt="Pornpailin Profile" class="w-full h-full object-cover">
                     </div>
 
@@ -138,8 +138,8 @@
         <section id="about-section" class="section-snap px-4 sm:px-6 md:px-8 py-[70px]">
             <div class="w-full max-w-[1148px] my-auto flex flex-col md:flex-row items-center md:items-stretch gap-[20px] sm:gap-[28px] md:gap-[40px]">
                 
-                <!-- Profile Image 2 -->
-                <div class="w-[150px] sm:w-[200px] md:w-[267px] h-[190px] sm:h-[265px] md:h-auto rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 shadow-2xl shrink-0">
+                <!-- Profile Image 2 (ลบขอบออกแล้ว) -->
+                <div class="w-[150px] sm:w-[200px] md:w-[267px] h-[190px] sm:h-[265px] md:h-auto rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl shrink-0">
                     <img src="img/profile2.png" onerror="this.src='image_7bfafc.jpg'" alt="Pornpailin Phimprao Photo" class="w-full h-full object-cover">
                 </div>
 
@@ -203,18 +203,19 @@
                     Project
                 </h2>
 
-                <div class="relative w-full max-w-[1200px] h-[480px] sm:h-[510px] md:h-[550px] flex items-center justify-center overflow-hidden px-2 sm:px-4">
+                <div class="relative w-full max-w-[1200px] h-[480px] sm:h-[510px] md:h-[550px] flex items-center justify-center px-10 sm:px-16 md:px-20">
+                    
                     <!-- ปุ่มกดเลื่อนซ้าย -->
-                    <button id="carousel-prev" class="absolute left-1 sm:left-4 md:left-10 z-40 w-[36px] h-[36px] sm:w-[50px] sm:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
-                        <svg class="w-4 h-4 sm:w-6 sm:h-6 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <button id="carousel-prev" class="absolute left-2 sm:left-6 md:left-12 z-40 w-[36px] h-[36px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
                     </button>
 
                     <!-- พื้นที่แสดงการ์ด Slider -->
-                    <div id="carousel-track" class="relative w-full h-full flex items-center justify-center"></div>
+                    <div id="carousel-track" class="relative w-full h-full flex items-center justify-center overflow-visible"></div>
 
                     <!-- ปุ่มกดเลื่อนขวา -->
-                    <button id="carousel-next" class="absolute right-1 sm:right-4 md:right-10 z-40 w-[36px] h-[36px] sm:w-[50px] sm:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
-                        <svg class="w-4 h-4 sm:w-6 sm:h-6 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    <button id="carousel-next" class="absolute right-2 sm:right-6 md:right-12 z-40 w-[36px] h-[36px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
                     </button>
                 </div>
             </div>
@@ -343,13 +344,12 @@
                 const baseClasses = "absolute transition-all duration-500 ease-in-out backdrop-blur-md border border-white/20 bg-[#d9d9d9]/20 flex flex-col justify-between";
                 
                 if (isMain) {
-                    // ปรับ padding ให้สมดุลเท่ากันทุกด้าน และเพิ่มระยะห่างระหว่างเนื้อหากับปุ่มด้วย flex และ gap ที่เหมาะสม
-                    card.className = `${baseClasses} z-30 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[480px] md:h-[500px] p-[16px] sm:p-[24px] md:p-[28px] rounded-[24px] sm:rounded-[40px] shadow-2xl scale-100 opacity-100 translate-x-0 group/card`;
+                    card.className = `${baseClasses} z-30 w-[275px] sm:w-[360px] md:w-[420px] h-[460px] sm:h-[480px] md:h-[500px] p-[16px] sm:p-[24px] md:p-[28px] rounded-[24px] sm:rounded-[40px] shadow-2xl scale-100 opacity-100 translate-x-0 group/card`;
                 } else if (offset === -1) {
-                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[380px] p-[20px] rounded-[30px] shadow-lg scale-90 opacity-50 -translate-x-[280px] lg:-translate-x-[340px] cursor-pointer`;
+                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[380px] p-[20px] rounded-[30px] shadow-lg scale-90 opacity-50 -translate-x-[260px] lg:-translate-x-[320px] cursor-pointer`;
                     card.onclick = () => { currentIndex = index; renderCarousel(); };
                 } else if (offset === 1) {
-                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[380px] p-[20px] rounded-[30px] shadow-lg scale-90 opacity-50 translate-x-[280px] lg:translate-x-[340px] cursor-pointer`;
+                    card.className = `${baseClasses} z-10 hidden md:flex w-[261px] h-[380px] p-[20px] rounded-[30px] shadow-lg scale-90 opacity-50 translate-x-[260px] lg:translate-x-[320px] cursor-pointer`;
                     card.onclick = () => { currentIndex = index; renderCarousel(); };
                 }
 
@@ -405,7 +405,6 @@
                     `;
                 }
 
-                // ปรับ letter-spacing ให้ชิดกันกระชับยิ่งขึ้น (-0.03em) และเพิ่มความสบายตา
                 const descClass = isMain 
                     ? "font-inter font-normal text-[11px] sm:text-[13px] md:text-[14px] leading-[14px] sm:leading-[17px] text-white/80 text-justify tracking-[-0.03em]"
                     : "font-inter font-normal text-[10px] leading-[12px] text-white/80 text-justify tracking-[-0.03em]";
@@ -433,7 +432,6 @@
                         <h3 class="${titleClass}">${project.title}</h3>
                         <p class="${descClass}">${project.desc}</p>
                     </div>
-                    <!-- เพิ่มระยะห่าง (Spacing) ระหว่างเนื้อหาด้านบนกับปุ่มด้านล่างให้สมดุลสวยงาม -->
                     <div class="flex flex-row items-center gap-[8px] pt-3 sm:pt-4 w-full">
                         ${buttonsHTML}
                     </div>
