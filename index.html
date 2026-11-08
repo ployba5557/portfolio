@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th" class="h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,12 +8,15 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google Fonts: Freehand & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Freehand&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <!-- เชื่อมโยงไฟล์ CSS ภายนอก -->
     <link rel="stylesheet" href="style.css">
     <style>
         /* ล็อกไม่ให้หน้าจอเลื่อนหลุดขอบซ้าย-ขวา พร้อมบังคับ Scroll Snap เต็มจอแบบนุ่มนวล */
-        html, body {
+        html,
+        body {
             width: 100%;
             max-width: 100vw;
             overflow-x: hidden !important;
@@ -25,6 +29,7 @@
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
         }
+
         .viewport-container {
             width: 100%;
             max-width: 100vw;
@@ -36,6 +41,7 @@
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
         }
+
         /* คลาสสำหรับแต่ละ Section ให้บล็อกสไลด์พอดีเต็มจอทุกอุปกรณ์ */
         .section-snap {
             width: 100%;
@@ -52,80 +58,110 @@
         }
     </style>
 </head>
+
 <body class="viewport-container">
 
-    <!-- 1. พื้นหลัง Mesh Gradient แบบดั้งเดิม -->
-    <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0 bg-[#1A1A1A]">
-        <div class="absolute w-[2674px] h-[2116px] left-[calc(50%-1337px)] top-[calc(50%-1058px)] filter blur-[200px] pointer-events-none opacity-90 scale-[0.6] sm:scale-[0.8] md:scale-100 transition-transform">
+    <!-- 1. พื้นหลัง Mesh Gradient ขยายใหญ่ขึ้นอีกนิดและอยู่ตรงกลาง -->
+    <div
+        class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0 bg-[#1A1A1A] flex items-center justify-center">
+        <div
+            class="relative w-[1600px] h-[1200px] filter blur-[120px] pointer-events-none opacity-90 scale-100 sm:scale-100 md:scale-100 transition-transform">
             <div class="anim-vec1 absolute bg-[rgba(138,183,228,0.7)] transition-all"></div>
             <div class="anim-vec2 absolute bg-[rgba(35,223,173,0.7)] transition-all"></div>
             <div class="anim-vec3 absolute bg-[rgba(160,227,164,0.7)] transition-all"></div>
             <div class="anim-vec4 absolute bg-[rgba(97,145,217,0.7)] transition-all"></div>
             <div class="anim-vec5 absolute bg-[rgba(205,213,116,0.7)] transition-all"></div>
         </div>
-        <!-- เลเยอร์สีดำโปร่งแสงแทรกสร้างมิติ -->
-        <div class="absolute inset-0 bg-radial from-transparent via-[#1A1A1A]/40 to-[#1A1A1A]/80 pointer-events-none"></div>
+        <!-- เลเยอร์สีดำโปร่งแสงเข้มขึ้นรอบนอกเพื่อให้เห็นพื้นที่สีดำเด่นชัด -->
+        <div class="absolute inset-0 bg-radial from-transparent via-[#1A1A1A]/50 to-[#1A1A1A]/90 pointer-events-none">
+        </div>
     </div>
 
     <!-- 2. แถบเมนูด้านบน (Navbar) แบบ Fixed ตามลงไปเวลา Scroll -->
-    <div class="fixed top-[15px] left-1/2 -translate-x-1/2 w-full max-w-[1168px] px-4 h-[70px] p-[10px] z-50 flex justify-center animate-fade-in-down pointer-events-auto">
-        <div class="w-full max-w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg"></div>
+    <div
+        class="fixed top-[15px] left-1/2 -translate-x-1/2 w-full max-w-[1168px] px-4 h-[70px] p-[10px] z-50 flex justify-center animate-fade-in-down pointer-events-auto">
+        <div
+            class="w-full max-w-[1148px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[70px] backdrop-blur-md shadow-lg">
+        </div>
     </div>
 
     <!-- 3. โครงสร้างหลัก แบ่งเป็น 3 Section แบบ Scroll Snap เต็มจอ -->
     <main class="relative w-full z-25">
-        
+
         <!-- SECTION 1: HERO BLOCK -->
         <section id="hero-section" class="section-snap px-4 pt-[70px] pb-6">
-            <div class="flex flex-col items-center justify-center gap-[12px] sm:gap-[20px] md:gap-[32px] w-full max-w-[1200px] my-auto">
-                
+            <div
+                class="flex flex-col items-center justify-center gap-[12px] sm:gap-[20px] md:gap-[32px] w-full max-w-[1200px] my-auto">
+
                 <!-- Header Text Block -->
                 <div class="flex flex-col items-center gap-[16px] sm:gap-[24px] md:gap-[36px] w-full">
-                    
+
                     <!-- ชื่อ Pornpailin Phimprao -->
                     <div class="flex flex-col items-center relative animate-fade-in-up shrink-0 select-none">
-                        <div class="font-freehand font-normal text-[50px] sm:text-[80px] md:text-[96px] leading-tight text-name-color whitespace-nowrap">
+                        <div
+                            class="font-freehand font-normal text-[50px] sm:text-[80px] md:text-[96px] leading-tight text-name-color whitespace-nowrap">
                             Pornpailin
                         </div>
-                        <div class="font-freehand font-normal text-[24px] sm:text-[38px] md:text-[48px] leading-none text-name-color whitespace-nowrap self-center md:self-end md:-mt-6 md:-mr-10">
+                        <div
+                            class="font-freehand font-normal text-[24px] sm:text-[38px] md:text-[48px] leading-none text-name-color whitespace-nowrap self-center md:self-end md:-mt-6 md:-mr-10">
                             Phimprao
                         </div>
                     </div>
 
                     <!-- PORTFOLIO -->
-                    <div class="w-full max-w-[300px] sm:max-w-[331px] h-[26px] sm:h-[32px] md:h-[48px] flex flex-row justify-center items-center gap-[4px] sm:gap-[6px] md:gap-[12px] p-0 animate-final-portfolio shrink-0 mt-2 md:mt-4">
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">P</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">R</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">T</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">F</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">L</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">I</span>
-                        <span class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
+                    <div
+                        class="w-full max-w-[300px] sm:max-w-[331px] h-[26px] sm:h-[32px] md:h-[48px] flex flex-row justify-center items-center gap-[4px] sm:gap-[6px] md:gap-[12px] p-0 animate-final-portfolio shrink-0 mt-2 md:mt-4">
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">P</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">R</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">T</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">F</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">L</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">I</span>
+                        <span
+                            class="font-inter font-bold text-[22px] sm:text-[26px] md:text-[40px] leading-none text-center text-name-color flex-none">O</span>
                     </div>
 
                 </div>
 
                 <!-- Profile Image & See More Button -->
                 <div class="flex flex-col items-center gap-[10px] sm:gap-[14px] md:gap-[20px] w-full shrink-0">
-                    <div class="w-[90px] sm:w-[120px] md:w-[147px] h-[115px] sm:h-[155px] md:h-[195px] bg-[#222] rounded-[22px] md:rounded-[40px] overflow-hidden shadow-xl shrink-0 animate-profile-entrance">
-                        <img src="img/profile1.png" onerror="this.src='image_d3d8df.png'" alt="Pornpailin Profile" class="w-full h-full object-cover">
+                    <div
+                        class="w-[90px] sm:w-[120px] md:w-[147px] h-[115px] sm:h-[155px] md:h-[195px] bg-[#222] rounded-[22px] md:rounded-[40px] overflow-hidden shadow-xl shrink-0 animate-profile-entrance">
+                        <img src="img/profile1.png" onerror="this.src='image_d3d8df.png'" alt="Pornpailin Profile"
+                            class="w-full h-full object-cover">
                     </div>
 
-                    <div class="w-full max-w-[380px] font-inter font-normal text-[11px] sm:text-[13px] md:text-[16px] leading-[15px] sm:leading-[18px] md:leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance px-2">
+                    <div
+                        class="w-full max-w-[380px] font-inter font-normal text-[11px] sm:text-[13px] md:text-[16px] leading-[15px] sm:leading-[18px] md:leading-[24px] text-center text-[rgba(255,255,255,0.7)] animate-bio-entrance px-2">
                         Hi, My name’s Pornpailin Phimprao. <br>
                         I’m a Computer Engineering graduate <br>
                         with a strong passion for UX/UI Design.
                     </div>
 
-                    <a href="#about-section" id="see-more-btn" class="relative w-[110px] sm:w-[130px] md:w-[147px] h-[34px] sm:h-[38px] md:h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate animate-btn-entrance inline-block">
-                        <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0"></div>
-                        <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[12px] sm:px-[16px] md:px-[20px] py-[4px] sm:py-[6px] md:py-[10px] gap-[6px] sm:gap-[8px] md:gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
-                            <span class="font-inter font-medium text-[13px] sm:text-[15px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">See more</span>
-                            <div class="w-[16px] sm:w-[18px] md:h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
+                    <a href="#about-section" id="see-more-btn"
+                        class="relative w-[110px] sm:w-[130px] md:w-[147px] h-[34px] sm:h-[38px] md:h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate animate-btn-entrance inline-block">
+                        <div
+                            class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0">
+                        </div>
+                        <div
+                            class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[12px] sm:px-[16px] md:px-[20px] py-[4px] sm:py-[6px] md:py-[10px] gap-[6px] sm:gap-[8px] md:gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
+                            <span
+                                class="font-inter font-medium text-[13px] sm:text-[15px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">See
+                                more</span>
+                            <div
+                                class="w-[16px] sm:w-[18px] md:h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
                                 <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24">
-                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
                                 </svg>
                             </div>
                         </div>
@@ -136,57 +172,88 @@
 
         <!-- SECTION 2: ABOUT / BIO DETAILS -->
         <section id="about-section" class="section-snap px-4 sm:px-6 md:px-8 py-[70px]">
-            <div class="w-full max-w-[1148px] my-auto flex flex-col md:flex-row items-center md:items-stretch gap-[20px] sm:gap-[28px] md:gap-[40px]">
-                
+            <div
+                class="w-full max-w-[1148px] my-auto flex flex-col md:flex-row items-center md:items-stretch gap-[20px] sm:gap-[28px] md:gap-[40px]">
+
                 <!-- Profile Image 2 -->
-                <div class="w-[150px] sm:w-[200px] md:w-[267px] h-[190px] sm:h-[265px] md:h-auto rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl shrink-0">
-                    <img src="img/profile2.png" onerror="this.src='image_7bfafc.jpg'" alt="Pornpailin Phimprao Photo" class="w-full h-full object-cover">
+                <div
+                    class="w-[150px] sm:w-[200px] md:w-[267px] h-[190px] sm:h-[265px] md:h-auto rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl shrink-0">
+                    <img src="img/profile2.png" onerror="this.src='image_7bfafc.jpg'" alt="Pornpailin Phimprao Photo"
+                        class="w-full h-full object-cover">
                 </div>
 
                 <!-- Text Details -->
-                <div class="w-full flex-1 flex flex-col items-start text-left justify-between gap-[12px] sm:gap-[16px] md:gap-[20px]">
+                <div
+                    class="w-full flex-1 flex flex-col items-start text-left justify-between gap-[12px] sm:gap-[16px] md:gap-[20px]">
                     <div class="w-full flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px]">
-                        <h2 class="w-full font-inter font-semibold text-[20px] sm:text-[26px] md:text-[40px] leading-[26px] sm:leading-[34px] md:leading-[48px] text-[rgba(255,255,255,0.9)] text-left">
-                            Pornpailin Phimprao 
-                            <span class="block sm:inline font-normal text-[14px] sm:text-[20px] md:text-[36px] text-[rgba(255,255,255,0.55)]">| UX/UI Designer</span>
+                        <h2
+                            class="w-full font-inter font-semibold text-[20px] sm:text-[26px] md:text-[40px] leading-[26px] sm:leading-[34px] md:leading-[48px] text-[rgba(255,255,255,0.9)] text-left">
+                            Pornpailin Phimprao
+                            <span
+                                class="block sm:inline font-normal text-[14px] sm:text-[20px] md:text-[36px] text-[rgba(255,255,255,0.55)]">|
+                                UX/UI Designer</span>
                         </h2>
 
-                        <div class="w-full font-inter font-light text-[12px] sm:text-[15px] md:text-[22px] leading-[17px] sm:leading-[22px] md:leading-[29px] text-[rgba(255,255,255,0.7)] space-y-1 text-left">
+                        <div
+                            class="w-full font-inter font-light text-[12px] sm:text-[15px] md:text-[22px] leading-[17px] sm:leading-[22px] md:leading-[29px] text-[rgba(255,255,255,0.7)] space-y-1 text-left">
                             <p>Bachelor of Engineering in Computer Engineering (2nd Class Honors)</p>
                             <p>Kasetsart University Chalermphrakiat Sakon Nakhon Province Campus</p>
                             <p>GPAX: 3.34</p>
                         </div>
 
-                        <div class="w-full font-inter font-light text-[12px] sm:text-[14px] md:text-[19px] leading-[17px] sm:leading-[20px] md:leading-[24px] text-[rgba(255,255,255,0.7)] text-left">
+                        <div
+                            class="w-full font-inter font-light text-[12px] sm:text-[14px] md:text-[19px] leading-[17px] sm:leading-[20px] md:leading-[24px] text-[rgba(255,255,255,0.7)] text-left">
                             <p class="mb-1 font-normal text-white/80">Personal Details:</p>
                             <ul class="list-disc list-inside space-y-1 pl-1 text-left">
                                 <li>Date of Birth: 12 Nov 2003 (Age: 23)</li>
                                 <li>Nationality: Thai</li>
                                 <li>Location: Singburi, Thailand</li>
                                 <li>Work Setup: On-site, Remote / Work from Home (WFH), Hybrid</li>
-                                <li><strong class="font-bold text-white">Contact:</strong> <a href="mailto:pornpailin.phim@gmail.com" class="hover:underline font-bold text-white">pornpailin.phim@gmail.com</a> | <strong class="font-bold text-white">092-5060596</strong></li>
+                                <li><strong class="font-bold text-white">Contact:</strong> <a
+                                        href="mailto:pornpailin.phim@gmail.com"
+                                        class="hover:underline font-bold text-white">pornpailin.phim@gmail.com</a> |
+                                    <strong class="font-bold text-white">092-5060596</strong></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="flex flex-row flex-wrap justify-start items-center gap-[10px] md:gap-[12px] pt-2 w-full">
-                        <a href="https://drive.google.com/drive/folders/1xRkjTbXJMvNtfBOeDtUH0VAHykWYH9oq?usp=sharing" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[147px] h-[38px] sm:h-[40px] md:h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
-                            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] sm:px-[16px] md:px-[20px] py-[6px] sm:py-[8px] md:py-[10px] gap-[6px] sm:gap-[8px] md:gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
-                                <span class="font-inter font-medium text-[14px] sm:text-[17px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Resume</span>
-                                <div class="w-[16px] sm:w-[20px] md:w-[24px] h-[16px] sm:h-[20px] md:h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
-                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    <div
+                        class="flex flex-row flex-wrap justify-start items-center gap-[10px] md:gap-[12px] pt-2 w-full">
+                        <a href="https://drive.google.com/drive/folders/1xRkjTbXJMvNtfBOeDtUH0VAHykWYH9oq?usp=sharing"
+                            target="_blank" rel="noopener noreferrer"
+                            class="relative flex-1 sm:flex-none sm:w-[147px] h-[38px] sm:h-[40px] md:h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+                            <div
+                                class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0">
+                            </div>
+                            <div
+                                class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] sm:px-[16px] md:px-[20px] py-[6px] sm:py-[8px] md:py-[10px] gap-[6px] sm:gap-[8px] md:gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
+                                <span
+                                    class="font-inter font-medium text-[14px] sm:text-[17px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Resume</span>
+                                <div
+                                    class="w-[16px] sm:w-[20px] md:w-[24px] h-[16px] sm:h-[20px] md:h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
+                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24">
+                                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                                    </svg>
                                 </div>
                             </div>
                         </a>
 
-                        <a href="https://drive.google.com/drive/folders/1GLEsx9qSfAEjvBvOh4kiMFXgoxi2nr-W?usp=sharing" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[168px] h-[38px] sm:h-[40px] md:h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
-                            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] sm:px-[16px] md:px-[20px] py-[6px] sm:py-[8px] md:py-[10px] gap-[6px] sm:gap-[8px] md:gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
-                                <span class="font-inter font-medium text-[14px] sm:text-[17px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Transcript</span>
-                                <div class="w-[16px] sm:w-[20px] md:w-[24px] h-[16px] sm:h-[20px] md:h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
-                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        <a href="https://drive.google.com/drive/folders/1GLEsx9qSfAEjvBvOh4kiMFXgoxi2nr-W?usp=sharing"
+                            target="_blank" rel="noopener noreferrer"
+                            class="relative flex-1 sm:flex-none sm:w-[168px] h-[38px] sm:h-[40px] md:h-[44px] cursor-pointer group shrink-0 rounded-[33px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+                            <div
+                                class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#323232] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover:w-full group-hover:h-full group-hover:translate-y-0 group-hover:left-0">
+                            </div>
+                            <div
+                                class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] sm:px-[16px] md:px-[20px] py-[6px] sm:py-[8px] md:py-[10px] gap-[6px] sm:gap-[8px] md:gap-[10px] backdrop-blur-md relative z-10 transition-all duration-500 group-hover:justify-between group-hover:px-[16px]">
+                                <span
+                                    class="font-inter font-medium text-[14px] sm:text-[17px] md:text-[20px] leading-[24px] text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Transcript</span>
+                                <div
+                                    class="w-[16px] sm:w-[20px] md:w-[24px] h-[16px] sm:h-[20px] md:h-[24px] hidden group-hover:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 shrink-0">
+                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24">
+                                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                                    </svg>
                                 </div>
                             </div>
                         </a>
@@ -198,24 +265,36 @@
 
         <!-- SECTION 3: PROJECT CAROUSEL -->
         <section id="project-section" class="section-snap px-4 pt-[70px] pb-6">
-            <div class="w-full max-w-[1440px] my-auto flex flex-col items-center gap-[16px] sm:gap-[36px] md:gap-[50px]">
-                <h2 class="font-inter font-normal text-[24px] sm:text-[40px] md:text-[48px] leading-none text-center text-white tracking-tight">
+            <div
+                class="w-full max-w-[1440px] my-auto flex flex-col items-center gap-[16px] sm:gap-[36px] md:gap-[50px]">
+                <h2
+                    class="font-inter font-normal text-[24px] sm:text-[40px] md:text-[48px] leading-none text-center text-white tracking-tight">
                     Project
                 </h2>
 
-                <div class="relative w-full max-w-[1200px] h-[480px] sm:h-[510px] md:h-[550px] flex items-center justify-center px-10 sm:px-16 md:px-20">
-                    
+                <div
+                    class="relative w-full max-w-[1200px] h-[480px] sm:h-[510px] md:h-[550px] flex items-center justify-center px-10 sm:px-16 md:px-20">
+
                     <!-- ปุ่มกดเลื่อนซ้าย -->
-                    <button id="carousel-prev" class="absolute left-2 sm:left-6 md:left-12 z-40 w-[36px] h-[36px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    <button id="carousel-prev"
+                        class="absolute left-2 sm:left-6 md:left-12 z-40 w-[36px] h-[36px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white opacity-70 group-hover:opacity-100 transition-opacity"
+                            viewBox="0 0 24 24">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                        </svg>
                     </button>
 
                     <!-- พื้นที่แสดงการ์ด Slider -->
-                    <div id="carousel-track" class="relative w-full h-full flex items-center justify-center overflow-visible"></div>
+                    <div id="carousel-track"
+                        class="relative w-full h-full flex items-center justify-center overflow-visible"></div>
 
                     <!-- ปุ่มกดเลื่อนขวา -->
-                    <button id="carousel-next" class="absolute right-2 sm:right-6 md:right-12 z-40 w-[36px] h-[36px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white opacity-70 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    <button id="carousel-next"
+                        class="absolute right-2 sm:right-6 md:right-12 z-40 w-[36px] h-[36px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 cursor-pointer group shadow-lg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white opacity-70 group-hover:opacity-100 transition-opacity"
+                            viewBox="0 0 24 24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -225,7 +304,7 @@
 
     <!-- JavaScript ควบคุมการทำงานและการ์ด Project -->
     <script>
-        document.getElementById('see-more-btn')?.addEventListener('click', function(e) {
+        document.getElementById('see-more-btn')?.addEventListener('click', function (e) {
             e.preventDefault();
             const targetSection = document.getElementById('about-section');
             if (targetSection) {
@@ -233,13 +312,13 @@
             }
         });
 
-        window.addEventListener('pageshow', function(event) {
+        window.addEventListener('pageshow', function (event) {
             if (window.scrollX !== 0) {
                 window.scrollTo(0, window.scrollY);
             }
         });
 
-        document.addEventListener('visibilitychange', function() {
+        document.addEventListener('visibilitychange', function () {
             if (!document.hidden && window.scrollX !== 0) {
                 window.scrollTo(0, window.scrollY);
             }
@@ -342,7 +421,7 @@
                 const isMain = offset === 0;
                 const card = document.createElement('div');
                 const baseClasses = "absolute transition-all duration-500 ease-in-out backdrop-blur-md border border-white/20 bg-[#d9d9d9]/20 flex flex-col justify-between";
-                
+
                 if (isMain) {
                     card.className = `${baseClasses} z-30 w-[275px] sm:w-[360px] md:w-[420px] h-[460px] sm:h-[480px] md:h-[500px] p-[16px] sm:p-[24px] md:p-[28px] rounded-[24px] sm:rounded-[40px] shadow-2xl scale-100 opacity-100 translate-x-0 group/card`;
                 } else if (offset === -1) {
@@ -354,7 +433,7 @@
                 }
 
                 const tagsHTML = project.tags.map(t => {
-                    const tagClass = isMain 
+                    const tagClass = isMain
                         ? "px-[8px] py-[2px] sm:px-[10px] sm:py-[3px] rounded-[6px] text-[10px] sm:text-[13px] text-white/80 font-inter leading-none"
                         : "px-[6px] py-[1px] rounded-[5px] text-[10px] text-white/80 font-inter leading-none";
                     return `<span class="${tagClass}" style="background: ${t.bg}">${t.name}</span>`;
@@ -363,62 +442,43 @@
                 let buttonsHTML = '';
 
                 if (isMain) {
-                    // การ์ดหลัก: มีเอฟเฟกต์ Hover และกดลิงก์ได้จริง
+                    // การ์ดหลัก: มีเอฟเฟกต์ Hover และกดลิงก์ได้จริง พร้อมปรับขนาด Responsive ป้องกันปุ่มล้นจอ
                     if (project.figmaUrl) {
-                        buttonsHTML += `<a href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[180px] h-[36px] cursor-pointer group/btn shrink-0 rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
-                            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] py-[4px] gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
-                                <span class="font-inter font-medium text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in Figma</span>
-                                <div class="w-[18px] h-[18px] flex items-center justify-center shrink-0">
-                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                                </div>
-                            </div>
-                        </a>`;
+                        buttonsHTML += `<a href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[180px] h-[32px] sm:h-[36px] cursor-pointer group/btn shrink-0 rounded-[14px] sm:rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
+            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[6px] sm:px-[10px] py-[2px] sm:py-[4px] gap-[3px] sm:gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
+                <span class="font-inter font-medium text-[12px] sm:text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in Figma</span>
+                <div class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] flex items-center justify-center shrink-0">
+                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                </div>
+            </div>
+        </a>`;
                     }
                     if (project.itchUrl) {
-                        buttonsHTML += `<a href="${project.itchUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[180px] h-[36px] cursor-pointer group/btn shrink-0 rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
-                            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] py-[4px] gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
-                                <span class="font-inter font-medium text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in itch.io</span>
-                                <div class="w-[18px] h-[18px] flex items-center justify-center shrink-0">
-                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                                </div>
-                            </div>
-                        </a>`;
+                        buttonsHTML += `<a href="${project.itchUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[180px] h-[32px] sm:h-[36px] cursor-pointer group/btn shrink-0 rounded-[14px] sm:rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
+            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[6px] sm:px-[10px] py-[2px] sm:py-[4px] gap-[3px] sm:gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
+                <span class="font-inter font-medium text-[12px] sm:text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">Open in itch.io</span>
+                <div class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] flex items-center justify-center shrink-0">
+                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                </div>
+            </div>
+        </a>`;
                     }
                     if (project.githubUrl) {
-                        buttonsHTML += `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[120px] h-[36px] cursor-pointer group/btn shrink-0 rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
-                            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
-                            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[10px] py-[4px] gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
-                                <span class="font-inter font-medium text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">GitHub</span>
-                                <div class="w-[18px] h-[18px] flex items-center justify-center shrink-0">
-                                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                                </div>
-                            </div>
-                        </a>`;
-                    }
-                } else {
-                    // การ์ดเล็ก (Small Cards): ใช้ขนาดสเปก Figma (h-[22px], rounded-[18px], px-[10px] py-[5px], font-size 10px) ไม่มี hover และไม่ลิงก์ไปไหน
-                    if (project.figmaUrl || project.itchUrl) {
-                        const btnText = project.itchUrl ? "Open in itch.io" : "Open in Figma";
-                        buttonsHTML += `<a href="javascript:void(0);" class="flex flex-row justify-center items-center px-[10px] py-[5px] gap-[2px] h-[22px] bg-[rgba(107,107,107,0.2)] rounded-[18px] shrink-0 pointer-events-none">
-                            <span class="font-inter font-medium text-[10px] leading-[12px] text-center text-[#E3E3E3] whitespace-nowrap">${btnText}</span>
-                            <div class="w-[10px] h-[10px] flex items-center justify-center shrink-0">
-                                <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </div>
-                        </a>`;
-                    }
-                    if (project.githubUrl) {
-                        buttonsHTML += `<a href="javascript:void(0);" class="flex flex-row justify-center items-center px-[10px] py-[5px] gap-[2px] h-[22px] bg-[rgba(107,107,107,0.2)] rounded-[18px] shrink-0 pointer-events-none">
-                            <span class="font-inter font-medium text-[10px] leading-[12px] text-center text-[#E3E3E3] whitespace-nowrap">GitHub</span>
-                            <div class="w-[10px] h-[10px] flex items-center justify-center shrink-0">
-                                <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            </div>
-                        </a>`;
+                        buttonsHTML += `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="relative flex-1 sm:flex-none sm:w-[120px] h-[32px] sm:h-[36px] cursor-pointer group/btn shrink-0 rounded-[14px] sm:rounded-[16px] overflow-hidden border border-white/10 shadow-lg isolation-isolate inline-block text-center">
+            <div class="absolute w-[75px] h-[46px] left-[calc(50%-75px/2)] bottom-0 translate-y-full bg-[#222222] rounded-[33px] -z-10 transition-all duration-600 ease-out group-hover/btn:w-full group-hover/btn:h-full group-hover/btn:translate-y-0 group-hover/btn:left-0"></div>
+            <div class="w-full h-full bg-[rgba(107,107,107,0.2)] group-hover/btn:bg-[rgba(127,127,127,0.1)] flex flex-row justify-center items-center px-[6px] sm:px-[10px] py-[2px] sm:py-[4px] gap-[3px] sm:gap-[4px] backdrop-blur-md relative z-10 transition-all duration-500">
+                <span class="font-inter font-medium text-[12px] sm:text-[15px] leading-none text-center text-[#E3E3E3] whitespace-nowrap shrink-0">GitHub</span>
+                <div class="w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] flex items-center justify-center shrink-0">
+                    <svg class="w-full h-full fill-[#FFFFFF]" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+            </div>
+        </a>`;
                     }
                 }
 
-                const descClass = isMain 
+                const descClass = isMain
                     ? "font-inter font-normal text-[11px] sm:text-[13px] md:text-[14px] leading-[14px] sm:leading-[17px] text-white/80 text-justify tracking-[-0.03em]"
                     : "font-inter font-normal text-[9px] sm:text-[10px] leading-[11px] text-white/80 text-justify tracking-[-0.03em] line-clamp-3";
 
@@ -430,8 +490,8 @@
                     ? "w-full h-[115px] sm:h-[150px] md:h-[170px] rounded-[14px] sm:rounded-[18px] overflow-hidden bg-black/40 shrink-0"
                     : "w-full h-[90px] sm:h-[100px] rounded-[12px] overflow-hidden bg-black/40 shrink-0";
 
-                const imgTransformClass = isMain 
-                    ? "w-full h-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-110" 
+                const imgTransformClass = isMain
+                    ? "w-full h-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-110"
                     : "w-full h-full object-cover";
 
                 card.innerHTML = `
@@ -468,4 +528,5 @@
         window.addEventListener('resize', renderCarousel);
     </script>
 </body>
+
 </html>
